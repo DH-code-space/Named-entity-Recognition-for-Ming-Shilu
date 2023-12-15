@@ -2,7 +2,7 @@ import json
 
 tag_list = ["PER", "LOC", "WEI", "ORG", "OFF"]
 
-with open('training_data_with_span.txt', 'rt', encoding='utf-8') as fi, open('train.txt', 'wt', encoding='utf-8') as fo:
+with open('training_data_with_span.txt', 'rt', encoding='utf-8') as fi, open('dataset/train.txt', 'wt', encoding='utf-8') as fo:
     corpus = fi.read().strip().split("\n")
     counter = 0
     for paragraph in corpus:
@@ -39,7 +39,7 @@ with open('training_data_with_span.txt', 'rt', encoding='utf-8') as fi, open('tr
                 fo.write(paragraph[i] + " " + "O\n")
         fo.write('\n')
 
-with open('training_data_with_span.txt', 'rt', encoding='utf-8') as fi, open('dev.txt', 'wt', encoding='utf-8') as fo:
+with open('training_data_with_span.txt', 'rt', encoding='utf-8') as fi, open('dataset/dev.txt', 'wt', encoding='utf-8') as fo:
     corpus = fi.read().strip().split("\n")
     counter = 0
     for paragraph in corpus:
@@ -76,7 +76,7 @@ with open('training_data_with_span.txt', 'rt', encoding='utf-8') as fi, open('de
                 fo.write(paragraph[i] + " " + "O\n")
         fo.write('\n')
 
-with open('testing_data_gt.json', 'rt', encoding='utf-8-sig') as fi, open('test.txt', 'wt', encoding='utf-8') as fo:
+with open('testing_data_gt.json', 'rt', encoding='utf-8-sig') as fi, open('dataset/test.txt', 'wt', encoding='utf-8') as fo:
     corpus = [line["text"] for line in json.load(fi)]
     for paragraph in corpus:
         end = 0

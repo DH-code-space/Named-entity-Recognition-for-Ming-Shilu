@@ -2,13 +2,13 @@ import json
 import re
 
 
-# original_context_path = 'training_data.txt'
-original_context_path = 'testing_data.txt'
-# llm_output_path = 'training_data_gpt4output.txt'
-# llm_output_path = 'testing_data_gpt3.5output.txt'
-llm_output_path = 'testing_data_gpt4output.txt'
-# context_with_span_path = 'training_data_with_span.txt'
-context_with_span_path = 'testing_data_with_span.txt'
+# original_context_path = 'Dataset/training_data.txt'
+original_context_path = 'Dataset/testing_data.txt'
+# llm_output_path = 'Dataset/training_data_gpt4output.txt'
+# llm_output_path = 'Dataset/testing_data_gpt3.5output.txt'
+llm_output_path = 'Dataset/testing_data_gpt4output.txt'
+# context_with_span_path = 'Dataset/training_data_with_span.txt'
+context_with_span_path = 'Dataset/testing_data_with_span.txt'
 
 predict_with_span = []
 with open(original_context_path, 'rt', encoding='UTF-8') as fi1, open(llm_output_path, 'rt', encoding='UTF-8') as fi2, open(context_with_span_path, 'wt', encoding='UTF-8') as fo:

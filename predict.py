@@ -5,7 +5,7 @@ import re
 
 tagger = SequenceTagger.load('best-model.pt')
 
-with open('testing_data.txt', 'rt', encoding='utf-8') as fi, open('testing_data_ner.txt', 'wt', encoding='utf-8') as fo:
+with open('Dataset/testing_data.txt', 'rt', encoding='utf-8') as fi, open('Dataset/testing_data_ner.txt', 'wt', encoding='utf-8') as fo:
     for line in tqdm(fi):
         seg = line.strip().replace(' ', '　') # replace whitespace with special symbol
         sent = Sentence(' '.join([i for i in seg.strip()]), use_tokenizer=False)

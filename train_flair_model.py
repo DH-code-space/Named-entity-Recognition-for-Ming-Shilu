@@ -11,7 +11,7 @@ columns = {0: 'text', 1: 'ner'}
 data_folder = './'
 
 # init a corpus using column format, data folder and the names of the train, dev and test files
-corpus: Corpus = ColumnCorpus(data_folder, columns, train_file='train.txt', test_file='test.txt', dev_file='dev.txt')
+corpus: Corpus = ColumnCorpus(data_folder, columns, train_file='Dataset/model_training/train.txt', test_file='Dataset/model_training/test.txt', dev_file='Dataset/model_training/dev.txt')
 
 print(corpus)
 

@@ -28,9 +28,9 @@ def plot_confusion_matrix(cm, classes, total_count, normalize=False, title='Conf
     plt.tight_layout()
 
 
-gt_path = 'testing_data_gt.json'
-# predict_path = 'testing_data_gpt3.5output.txt'
-predict_path = 'testing_data_gpt4output.txt'
+gt_path = 'Dataset/testing_data_gt.json'
+# predict_path = 'Dataset/testing_data_gpt3.5output.txt'
+predict_path = 'Dataset/testing_data_gpt4output.txt'
 
 with open(gt_path, 'rt', encoding='utf-8-sig') as fi1, open(predict_path, 'rt', encoding='utf-8') as fi2:
     gt_data = json.load(fi1)

@@ -28,8 +28,8 @@ def plot_confusion_matrix(cm, classes, total_count, normalize=False, title='Conf
     plt.tight_layout()
 
 
-gt_path = 'testing_data_gt.json'
-predict_path = 'testing_data_with_span.txt'
+gt_path = 'Dataset/testing_data_gt.json'
+predict_path = 'Dataset/testing_data_with_span.txt'
 
 with open(gt_path, 'rt', encoding='utf-8-sig') as fi1, open(predict_path, 'rt', encoding='utf-8') as fi2:
     text_with_NE = fi2.read().strip().split("\n")
@@ -192,12 +192,6 @@ with open(gt_path, 'rt', encoding='utf-8-sig') as fi1, open(predict_path, 'rt', 
                         confusion_matrix[3][0] += line_predict_person.count(entity)
                     elif entity in line_gt['OFFICIAL']:
                         confusion_matrix[4][0] += line_predict_person.count(entity)
-                    else:
-                        print(entity, 'NOT FOUND')
-            if line_gt['PERSON'][0] != "None":
-                for entity in line_gt['PERSON']:
-                    if entity not in line_predict['PERSON']:
-                        print('PERSON', entity)
         
         if line_predict['LOC'][0] != "None":
             for entity in line_predict['LOC']:
@@ -213,12 +207,6 @@ with open(gt_path, 'rt', encoding='utf-8-sig') as fi1, open(predict_path, 'rt', 
                         confusion_matrix[3][1] += line_predict_loc.count(entity)
                     elif entity in line_gt['OFFICIAL']:
                         confusion_matrix[4][1] += line_predict_loc.count(entity)
-                    else:
-                        print(entity, 'NOT FOUND')
-            if line_gt['LOC'][0] != "None":
-                for entity in line_gt['LOC']:
-                    if entity not in line_predict['LOC']:
-                        print('LOC', entity)
         
         if line_predict['WEI'][0] != "None":
             for entity in line_predict['WEI']:
@@ -234,12 +222,6 @@ with open(gt_path, 'rt', encoding='utf-8-sig') as fi1, open(predict_path, 'rt', 
                         confusion_matrix[3][2] += line_predict_wei.count(entity)
                     elif entity in line_gt['OFFICIAL']:
                         confusion_matrix[4][2] += line_predict_wei.count(entity)
-                    else:
-                        print(entity, 'NOT FOUND')
-            if line_gt['WEI'][0] != "None":
-                for entity in line_gt['WEI']:
-                    if entity not in line_predict['WEI']:
-                        print('WEI', entity)
 
         if line_predict['ORG'][0] != "None":
             for entity in line_predict['ORG']:
@@ -255,12 +237,6 @@ with open(gt_path, 'rt', encoding='utf-8-sig') as fi1, open(predict_path, 'rt', 
                         confusion_matrix[2][3] += line_predict_org.count(entity)
                     elif entity in line_gt['OFFICIAL']:
                         confusion_matrix[4][3] += line_predict_org.count(entity)
-                    else:
-                        print(entity, 'NOT FOUND')
-            if line_gt['ORG'][0] != "None":
-                for entity in line_gt['ORG']:
-                    if entity not in line_predict['ORG']:
-                        print('ORG', entity)
         
         if line_predict['OFFICIAL'][0] != "None":
             for entity in line_predict['OFFICIAL']:
@@ -276,12 +252,6 @@ with open(gt_path, 'rt', encoding='utf-8-sig') as fi1, open(predict_path, 'rt', 
                         confusion_matrix[2][4] += line_predict_official.count(entity)
                     elif entity in line_gt['ORG']:
                         confusion_matrix[3][4] += line_predict_official.count(entity)
-                    else:
-                        print(entity, 'NOT FOUND')
-            if line_gt['OFFICIAL'][0] != "None":
-                for entity in line_gt['OFFICIAL']:
-                    if entity not in line_predict['OFFICIAL']:
-                        print('OFFICIAL', entity)
 
         precision = correct_len / predict_len
         recall = correct_len / gt_len

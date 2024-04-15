@@ -14,28 +14,28 @@ We leverage Large Language Models (LLMs) to create annotated data for the Named 
 
 Put the [model](https://github.com/youchen0620/Named-entity-Recognition-for-Ming-Shilu/releases/tag/model) into this folder.
 
-Create **testing_data.txt** where you can put what you want to punctuation.
+Create **Dataset/testing_data.txt** where you can put what you want to punctuation.
 
-Then use **predict.py** to predict.
+Then use **Code/predict.py** to predict.
 
-The result will be showed in **testing_data_ner.txt**
+The result will be showed in ***Dataset/testing_data_ner.txt**
 
 ## Finding out the performance of LLMs
 
-1. Use **llm_processing.ipynb** to get the annotation of **testing_data.txt** from LLMs. (**testing_data_gpt3.5output.txt**, **testing_data_gpt4output.txt**)
+1. Use **Code/llm_processing.ipynb** to get the annotation of **Dataset/testing_data.txt** from LLMs. (**Dataset/testing_data_gpt3.5output.txt**, **Dataset/testing_data_gpt4output.txt**)
 
-2. Use **calculate_F1_no_postprocessing.py** to evaluate the annotation quality of LLMs.
+2. Use **Code/calculate_F1_no_postprocessing.py** to evaluate the annotation quality of LLMs.
 
-3. Use **llm_postprocessing.py** to automatically correct some mistakes caused by LLMs.
+3. Use **Code/llm_postprocessing.py** to automatically correct some mistakes caused by LLMs.
 
-4. Use **calculate_F1_unweighted.py** and **calculate_F1_weighted.py** to evaluate the annotation quality after Knowledge-based Correction.
+4. Use **Code/calculate_F1_unweighted.py** and **Code/calculate_F1_weighted.py** to evaluate the annotation quality after Knowledge-based Correction.
 
 ## Training the Model
 
-1. Use **llm_processing.ipynb** to get the annotation of **training_data.txt** from LLMs. (**training_data_gpt4output.txt**)
+1. Use **Code/llm_processing.ipynb** to get the annotation of **Dataset/training_data.txt** from LLMs. (**Dataset/training_data_gpt4output.txt**)
 
-2. Use **llm_postprocessing.py** to automatically correct some mistakes caused by LLMs.
+2. Use **Code/llm_postprocessing.py** to automatically correct some mistakes caused by LLMs.
 
-3. Use **create_flair_dataset.py** to create the dataset in **dataset** folder.
+3. Use **Code/create_flair_dataset.py** to create the dataset in **Dataset/model_training** folder.
 
-4. Use **train_flair_model.py** to training the model.
+4. Use **Code/train_flair_model.py** to training the model.

@@ -14,7 +14,7 @@ We leverage Large Language Models (LLMs) to create annotated data for the Named 
 
 Put the [model](https://github.com/youchen0620/Named-entity-Recognition-for-Ming-Shilu/releases/tag/model) into this folder.
 
-Create **Dataset/testing_data.txt** where you can put what you want to punctuation.
+Create **Dataset/testing_data.txt** where you can put what you want to recognize the named-entities.
 
 Then use **Code/predict.py** to predict.
 
